@@ -125,6 +125,12 @@ def main() -> None:
     skill_files = manifest_skill_paths()
     for path in skill_files:
         frontmatter, _ = split_frontmatter(path, path.read_text())
+        # An unquoted value containing ": " is invalid YAML; strict loaders
+        # (npx skills) then report "No valid skills found" with no other hint.
+        for line in frontmatter.splitlines():
+            match = re.match(r"^\s*[\w-]+:\s+(.+)$", line)
+            if match and ": " in match.group(1) and match.group(1)[0] not in "\"'":
+                fail(f"{path.relative_to(ROOT)} frontmatter value needs quotes: {line[:60]}...")
         for key in ("name", "description", "when_to_use"):
             if not frontmatter_value(frontmatter, key):
                 fail(f"{path.relative_to(ROOT)} frontmatter is missing {key}")
