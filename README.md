@@ -5,11 +5,22 @@ public data from nine social platforms through one key: Instagram, TikTok, Faceb
 X/Twitter, Threads, YouTube, Reddit and Pinterest. Profiles, posts, comments, followers, search,
 ads and transcripts as clean JSON, **one key, one credit balance, priced per call, failed calls free.**
 
-The skill teaches your agent the InsightSocial workflow (read the free catalogue -> price ->
-call -> page, cost discipline, error handling), so it uses real paths and parameters instead of
-guessing them, and stops to ask before it spends.
+The skill teaches your agent the InsightSocial workflow (search -> price -> call -> page, cost
+discipline, error handling), so it uses real paths and parameters instead of guessing them, and
+stops to ask before it spends; the bundled [MCP server](https://github.com/insightsocial/cli)
+gives it live tools. They work together, and the skill falls back to plain REST when MCP isn't
+connected.
 
 ## Install
+
+Fastest path, with the official InsightSocial CLI:
+
+```bash
+npx -y insightsocial init
+```
+
+`insightsocial init` saves your key, installs this skill into detected agents and offers MCP
+registration. CLI repo: [insightsocial/cli](https://github.com/insightsocial/cli).
 
 Any agent that supports Agent Skills (Claude Code, Codex, Cursor, Copilot, and others):
 
@@ -17,7 +28,7 @@ Any agent that supports Agent Skills (Claude Code, Codex, Cursor, Copilot, and o
 npx skills add insightsocial/skills
 ```
 
-Claude Code, as a plugin:
+Claude Code, as a plugin (skill + MCP server in one step):
 
 ```bash
 claude plugin marketplace add insightsocial/skills
@@ -36,11 +47,14 @@ Manual: copy `skills/insightsocial/` into your agent's skills directory
 ## Setup
 
 Create a key at [insightsocial.app/portal/api/keys](https://www.insightsocial.app/portal/api/keys)
-and expose it only as an environment variable:
+and save it once, so neither your agent config nor the conversation ever holds it:
 
 ```bash
-export INSIGHTSOCIAL_API_KEY=isk_live_...
+npx -y insightsocial login
 ```
+
+For application code, expose a dedicated key only as an environment variable instead:
+`export INSIGHTSOCIAL_API_KEY=isk_live_...`.
 
 Every new account gets 10 free calls. Then ask your agent for what you need, for example
 *"find 20 fitness creators on TikTok with over 50k followers"* or *"what are people saying
@@ -50,7 +64,7 @@ under this YouTube video?"*.
 
 | Skill | What it does |
 |---|---|
-| [`insightsocial`](skills/insightsocial/SKILL.md) | Find, price, and call any endpoint in the catalogue; pagination, errors and credit discipline |
+| [`insightsocial`](skills/insightsocial/SKILL.md) | Find, price, and call any endpoint over the CLI, MCP or REST; pagination, free re-reads, errors and credit discipline |
 
 Application-integration guidance (Python, Node, a ready-made agent tool) is in
 [`references/rest.md`](skills/insightsocial/references/rest.md).

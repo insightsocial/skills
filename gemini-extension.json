@@ -1,8 +1,22 @@
 {
   "name": "insightsocial",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Public data from Instagram, TikTok, Facebook, LinkedIn, X/Twitter, Threads, YouTube, Reddit and Pinterest through one API: profiles, posts, comments, followers, search, ads and transcripts as clean JSON. One key, one credit balance, priced per call, failed calls free.",
   "contextFileName": "skills/insightsocial/SKILL.md",
+  "mcpServers": {
+    "insightsocial": {
+      "description": "Search, price and call 239 social data endpoints through one InsightSocial key.",
+      "command": "npx",
+      "args": [
+        "-y",
+        "insightsocial",
+        "mcp"
+      ],
+      "env": {
+        "INSIGHTSOCIAL_API_KEY": "$INSIGHTSOCIAL_API_KEY"
+      }
+    }
+  },
   "settings": [
     {
       "name": "InsightSocial API key",

@@ -19,6 +19,7 @@ CURSOR_MANIFEST = ROOT / ".cursor-plugin" / "plugin.json"
 GEMINI_MANIFEST = ROOT / "gemini-extension.json"
 CATALOGUE_URL = "https://api.insightsocial.app/v1/endpoints"
 USER_AGENT = "insightsocial-skills-check/1"
+CLI_SKILL_RAW = "https://raw.githubusercontent.com/insightsocial/cli/main/skills/insightsocial"
 
 # Text that must never ship in a public skill. The private term list comes from
 # the FORBIDDEN_TERMS secret (comma-separated) so this public file does not
@@ -155,6 +156,14 @@ def main() -> None:
         for endpoint in sorted(set(ENDPOINT_PATH.findall(text))):
             if endpoint not in available:
                 fail(f"{path.relative_to(ROOT)} names {endpoint}, which the live catalogue does not list as available")
+
+    # The CLI bundles this skill and installs it on `insightsocial init`; two
+    # copies with one name must not drift, or whichever installs last wins.
+    for relative in ("SKILL.md", "references/rest.md"):
+        local = (ROOT / "skills" / "insightsocial" / relative).read_text()
+        status, bundled = fetch(f"{CLI_SKILL_RAW}/{relative}")
+        if status != 200 or bundled != local:
+            fail(f"skills/insightsocial/{relative} differs from the copy in insightsocial/cli; copy it there and release both")
 
     for url in sorted({url.rstrip(".,") for text in texts.values() for url in DOCS_URL.findall(text)}):
         status, _ = fetch(url)

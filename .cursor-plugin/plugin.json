@@ -1,7 +1,7 @@
 {
   "name": "insightsocial",
   "displayName": "InsightSocial",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Public data from Instagram, TikTok, Facebook, LinkedIn, X/Twitter, Threads, YouTube, Reddit and Pinterest through one API: profiles, posts, comments, followers, search, ads and transcripts as clean JSON. One key, one credit balance, priced per call, failed calls free.",
   "author": {
     "name": "InsightSocial",
@@ -10,7 +10,7 @@
   "publisher": "InsightSocial",
   "homepage": "https://www.insightsocial.app",
   "repository": "https://github.com/insightsocial/skills",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "logo": "assets/logo.png",
   "category": "data-analytics",
   "keywords": [
@@ -38,6 +38,9 @@
         "description": "Your InsightSocial key (starts with isk_live_). Create one at https://www.insightsocial.app/portal/api/keys - every new account gets 10 free calls."
       }
     },
-    "required": ["INSIGHTSOCIAL_API_KEY"]
-  }
+    "required": [
+      "INSIGHTSOCIAL_API_KEY"
+    ]
+  },
+  "mcpServers": "./.mcp.json"
 }

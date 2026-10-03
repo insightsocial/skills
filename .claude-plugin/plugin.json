@@ -1,7 +1,7 @@
 {
   "name": "insightsocial",
   "description": "Public data from Instagram, TikTok, Facebook, LinkedIn, X/Twitter, Threads, YouTube, Reddit and Pinterest through one API: profiles, posts, comments, followers, search, ads and transcripts as clean JSON. One key, one credit balance, priced per call, failed calls free.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "InsightSocial",
     "email": "support@insightsocial.app",
@@ -9,7 +9,7 @@
   },
   "homepage": "https://www.insightsocial.app/docs",
   "repository": "https://github.com/insightsocial/skills",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "keywords": [
     "social-media",
     "instagram",
@@ -17,9 +17,12 @@
     "linkedin",
     "youtube",
     "data",
-    "api"
+    "api",
+    "mcp",
+    "cli"
   ],
   "skills": [
     "./skills/insightsocial"
-  ]
+  ],
+  "mcpServers": "./.mcp.json"
 }
