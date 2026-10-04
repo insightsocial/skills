@@ -1,7 +1,7 @@
 {
   "name": "insightsocial",
   "displayName": "InsightSocial",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Public data from Instagram, TikTok, Facebook, LinkedIn, X/Twitter, Threads, YouTube, Reddit and Pinterest through one API: profiles, posts, comments, followers, search, ads and transcripts as clean JSON. One key, one credit balance, priced per call, failed calls free.",
   "author": {
     "name": "InsightSocial",
