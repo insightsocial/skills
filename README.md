@@ -1,9 +1,10 @@
 # InsightSocial agent skills
 
 Official [Agent Skills](https://agentskills.io) for the [InsightSocial API](https://www.insightsocial.app/docs) -
-public data from nine social platforms through one key: Instagram, TikTok, Facebook, LinkedIn,
-X/Twitter, Threads, YouTube, Reddit and Pinterest. Profiles, posts, comments, followers, search,
-ads and transcripts as clean JSON, **one key, one credit balance, priced per call, failed calls free.**
+public data from 25 social platforms through one key: Instagram, TikTok, Facebook, LinkedIn,
+X/Twitter, Threads, YouTube, Reddit, Pinterest, Bluesky, Telegram, Twitch, Douyin, Xiaohongshu,
+Weibo, Substack, Nextdoor and more. Profiles, posts, comments, followers, search, ads and
+transcripts as clean JSON, **one key, one credit balance, priced per call, failed calls free.**
 
 The skill teaches your agent the InsightSocial workflow (search -> price -> call -> page, cost
 discipline, error handling), so it uses real paths and parameters instead of guessing them, and

@@ -1,7 +1,7 @@
 {
   "name": "insightsocial",
-  "description": "Public data from Instagram, TikTok, Facebook, LinkedIn, X/Twitter, Threads, YouTube, Reddit and Pinterest through one API: profiles, posts, comments, followers, search, ads and transcripts as clean JSON. One key, one credit balance, priced per call, failed calls free.",
-  "version": "0.3.8",
+  "description": "Public data from Instagram, TikTok, Facebook, LinkedIn, X/Twitter, Threads, YouTube, Reddit, Pinterest, Bluesky, Telegram, Twitch, Douyin, Xiaohongshu, Weibo, Substack, Nextdoor and 8 more platforms through one API: profiles, posts, comments, followers, search, ads and transcripts as clean JSON. One key, one credit balance, priced per call, failed calls free.",
+  "version": "0.3.9",
   "author": {
     "name": "InsightSocial",
     "email": "support@insightsocial.app",
