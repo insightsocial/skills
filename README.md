@@ -70,6 +70,14 @@ with OAuth the first time Claude uses it. Every tool call goes to that server an
 searching and pricing endpoints is free, and `call_endpoint` spends credits from your InsightSocial
 balance to fetch public social data. See the [privacy policy](https://www.insightsocial.app/privacy-policy).
 
+When the MCP tools are not connected, the skill can instead tell your agent to use the InsightSocial
+CLI (`npx insightsocial`) or call the REST API at `https://api.insightsocial.app/v1` with your own
+InsightSocial API key, and to read the docs at `https://www.insightsocial.app/docs`. Those are the only
+other places it sends anything, and all of them are InsightSocial's own services.
+
+What the server keeps: each call's full result for 3 days, so it can be re-read for free, and a log of
+each call (endpoint, inputs, credits charged) for billing and support.
+
 The Cursor and Gemini CLI builds keep the local `npx insightsocial mcp` server with your API key.
 
 ## Skills
