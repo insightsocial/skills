@@ -7,7 +7,7 @@
   },
   "metadata": {
     "description": "Official InsightSocial plugin marketplace - agent access to public data from 25 social platforms.",
-    "version": "0.3.9"
+    "version": "0.4.0"
   },
   "plugins": [
     {

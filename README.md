@@ -29,7 +29,7 @@ Any agent that supports Agent Skills (Claude Code, Codex, Cursor, Copilot, and o
 npx skills add insightsocial/skills
 ```
 
-Claude Code, as a plugin (skill + MCP server in one step):
+Claude Code, as a plugin (skill + hosted MCP server in one step):
 
 ```bash
 claude plugin marketplace add insightsocial/skills
@@ -60,6 +60,17 @@ For application code, expose a dedicated key only as an environment variable ins
 Every new account gets 10 free calls. Then ask your agent for what you need, for example
 *"find 20 fitness creators on TikTok with over 50k followers"* or *"what are people saying
 under this YouTube video?"*.
+
+## What the Claude plugin connects to
+
+The Claude plugin (`.claude-plugin/plugin.json`) contains one skill and one MCP server entry. It runs no
+code on your machine: no hooks, no scripts, no package downloads. The MCP entry points at the hosted
+InsightSocial server, `https://api.insightsocial.app/mcp`, and you sign in to your InsightSocial account
+with OAuth the first time Claude uses it. Every tool call goes to that server and nowhere else:
+searching and pricing endpoints is free, and `call_endpoint` spends credits from your InsightSocial
+balance to fetch public social data. Privacy policy: https://www.insightsocial.app/privacy-policy.
+
+The Cursor and Gemini CLI builds keep the local `npx insightsocial mcp` server with your API key.
 
 ## Skills
 
