@@ -8,6 +8,7 @@
     "url": "https://www.insightsocial.app"
   },
   "homepage": "https://www.insightsocial.app/docs",
+  "privacyPolicyUrl": "https://www.insightsocial.app/privacy-policy",
   "repository": "https://github.com/insightsocial/skills",
   "license": "MIT",
   "keywords": [

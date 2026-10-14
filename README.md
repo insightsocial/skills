@@ -68,7 +68,7 @@ code on your machine: no hooks, no scripts, no package downloads. The MCP entry 
 InsightSocial server, `https://api.insightsocial.app/mcp`, and you sign in to your InsightSocial account
 with OAuth the first time Claude uses it. Every tool call goes to that server and nowhere else:
 searching and pricing endpoints is free, and `call_endpoint` spends credits from your InsightSocial
-balance to fetch public social data. Privacy policy: https://www.insightsocial.app/privacy-policy.
+balance to fetch public social data. See the [privacy policy](https://www.insightsocial.app/privacy-policy).
 
 The Cursor and Gemini CLI builds keep the local `npx insightsocial mcp` server with your API key.
 
