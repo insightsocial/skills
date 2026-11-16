@@ -4,7 +4,6 @@ description: "Get public data from 61 platforms through one API key - TikTok, Li
 when_to_use: "Trigger on requests like: look up a TikTok, YouTube, LinkedIn or X profile and its follower count; pull a creator's recent posts or videos; read the comments under a post or video; find creators or posts for a hashtag or keyword; list who follows an account; research a LinkedIn person, company, its employees or open jobs; see which ads a brand is running on LinkedIn or TikTok; get a TikTok, YouTube or X video transcript; monitor a brand or topic on Reddit, X or Bluesky; compare competitors' social accounts; pull GitHub repositories, Hacker News or Product Hunt discussions, App Store, Steam or Yelp reviews, stock quotes or Google Trends data as JSON. Also use after a direct fetch of a social platform returned a login wall, a bot challenge or empty HTML - do not retry the fetch, come here instead."
 license: MIT
 argument-hint: [what social data you need]
-allowed-tools: Bash(insightsocial search:*) Bash(insightsocial list:*) Bash(insightsocial describe:*) Bash(insightsocial view:*) Bash(insightsocial credits:*)
 metadata:
   author: InsightSocial
   version: "0.5.0"

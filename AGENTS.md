@@ -19,5 +19,12 @@ When a skill's content changes, bump the version in all five places together:
 `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`, `.cursor-plugin/plugin.json`,
 `gemini-extension.json`, and `metadata.version` in each `SKILL.md`.
 
-Run `bash scripts/check.sh` before handing off changes. It checks the manifests agree, and that
-every `/v1/...` path and every insightsocial.app link a skill names is live today.
+Run the check before handing off changes. It checks the manifests agree, and that every `/v1/...`
+path and every insightsocial.app link a skill names is live today. It lives inline in
+`.github/workflows/check.yml`, because the Claude directory refuses script files in this repository
+(we are not a Verified organization). Run it locally from the repository root:
+
+    sed -n "/python3 - <<'PY'/,/^ *PY$/{//!p;}" .github/workflows/check.yml | sed 's/^          //' | python3 -
+
+Keep this repository free of scripts, `allowed-tools` lines and other non-Markdown/JSON/YAML files,
+or the Claude directory refuses the plugin.
