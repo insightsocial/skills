@@ -1,10 +1,12 @@
 # InsightSocial agent skills
 
 Official [Agent Skills](https://agentskills.io) for the [InsightSocial API](https://www.insightsocial.app/docs) -
-public data from 22 social platforms through one key: TikTok, LinkedIn, X/Twitter, YouTube,
-Reddit, Pinterest, Bluesky, Telegram, Twitch, Douyin, Xiaohongshu, Weibo, Substack, Nextdoor and
-more. Profiles, posts, comments, followers, search, ads and
-transcripts as clean JSON, **one key, one credit balance, priced per call, failed calls free.**
+public data from 61 platforms through one key: TikTok, LinkedIn, X/Twitter, YouTube, Reddit,
+Pinterest, Bluesky, Telegram, Twitch, Douyin, Xiaohongshu, Weibo, Substack, Nextdoor and other
+social networks, plus GitHub, Hacker News, Product Hunt, Stack Overflow, Wikipedia, Google News and
+Trends, Yahoo Finance, Polymarket, the App Store, Steam, Yelp, Shopify stores and more. Profiles,
+posts, comments, followers, reviews, search, ads and transcripts as clean JSON, **one key, one
+credit balance, priced per call, failed calls free.**
 
 The skill teaches your agent the InsightSocial workflow (search -> price -> call -> page, cost
 discipline, error handling), so it uses real paths and parameters instead of guessing them, and
@@ -68,7 +70,7 @@ code on your machine: no hooks, no scripts, no package downloads. The MCP entry 
 InsightSocial server, `https://api.insightsocial.app/mcp`, and you sign in to your InsightSocial account
 with OAuth the first time Claude uses it. Every tool call goes to that server and nowhere else:
 searching and pricing endpoints is free, and `call_endpoint` spends credits from your InsightSocial
-balance to fetch public social data. See the [privacy policy](https://www.insightsocial.app/privacy-policy).
+balance to fetch public data. See the [privacy policy](https://www.insightsocial.app/privacy-policy).
 
 When the MCP tools are not connected, the skill can instead tell your agent to use the InsightSocial
 CLI (`npx insightsocial`) or call the REST API at `https://api.insightsocial.app/v1` with your own
