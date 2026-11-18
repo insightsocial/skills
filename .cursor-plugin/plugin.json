@@ -1,7 +1,7 @@
 {
   "name": "insightsocial",
   "displayName": "InsightSocial",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Public data from 61 platforms through one API: TikTok, LinkedIn, X/Twitter, YouTube, Reddit, Bluesky, Douyin, Xiaohongshu, Weibo and other social networks, plus GitHub, Hacker News, Product Hunt, the App Store, Yahoo Finance, Google Trends and more. Profiles, posts, comments, followers, reviews, search, ads and transcripts as clean JSON. One key, one credit balance, priced per call, failed calls free.",
   "author": {
     "name": "InsightSocial",
