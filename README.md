@@ -72,10 +72,11 @@ with OAuth the first time Claude uses it. Every tool call goes to that server an
 searching and pricing endpoints is free, and `call_endpoint` spends credits from your InsightSocial
 balance to fetch public data. See the [privacy policy](https://www.insightsocial.app/privacy-policy).
 
-When the MCP tools are not connected, the skill can instead tell your agent to use the InsightSocial
-CLI (`npx insightsocial`) or call the REST API at `https://api.insightsocial.app/v1` with your own
-InsightSocial API key, and to read the docs at `https://www.insightsocial.app/docs`. Those are the only
-other places it sends anything, and all of them are InsightSocial's own services.
+The plugin's skill ([`claude/skills/insightsocial`](claude/skills/insightsocial/SKILL.md)) works only
+through those MCP tools. It never reads an API key or any other credential from your machine, your
+environment or your files, and it never asks you to paste one into the chat; if the tools are not
+connected, it asks you to connect InsightSocial in Claude's connector settings. Besides the MCP server,
+it may read the docs at `https://www.insightsocial.app/docs`.
 
 What the server keeps: each call's full result for 3 days, so it can be re-read for free, and a log of
 each call (endpoint, inputs, credits charged) for billing and support.
@@ -87,6 +88,7 @@ The Cursor and Gemini CLI builds keep the local `npx insightsocial mcp` server w
 | Skill | What it does |
 |---|---|
 | [`insightsocial`](skills/insightsocial/SKILL.md) | Find, price, and call any endpoint over the CLI, MCP or REST; pagination, free re-reads, errors and credit discipline |
+| [`insightsocial`](claude/skills/insightsocial/SKILL.md) (Claude plugin) | The same workflow through the hosted MCP tools only, signed in with OAuth; no local key |
 
 Application-integration guidance (Python, Node, a ready-made agent tool) is in
 [`references/rest.md`](skills/insightsocial/references/rest.md).

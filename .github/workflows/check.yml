@@ -162,7 +162,7 @@ jobs:
                   if frontmatter_value(frontmatter, "version") != version:
                       fail(f"{path.relative_to(ROOT)} metadata.version must be {version}")
 
-              published = sorted((ROOT / "skills").rglob("*.md")) + [ROOT / "README.md"]
+              published = sorted(set((ROOT / "skills").rglob("*.md")) | set(skill_files)) + [ROOT / "README.md"]
               texts = {path: path.read_text() for path in published}
               for path, text in texts.items():
                   for label, pattern in FORBIDDEN.items():
